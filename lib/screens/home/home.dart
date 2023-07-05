@@ -80,14 +80,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin{
                   const SizedBox(height: 20,),
                   textStyle("Progress", 20, ColorConstants.TEXT_COLOR, FontWeight.bold),
                   const SizedBox(height: 20),
-                  SizedBox(
-                    width: double.maxFinite,
-                    child: ListView.builder(
-                        itemCount: 3,
-                        scrollDirection: Axis.vertical, itemBuilder: (BuildContext context, int index) {
-                      return taskList("Design Changes","2 day ago");
-                    }),
-                  )
+
                 ],
               ),
             );

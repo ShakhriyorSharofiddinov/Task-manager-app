@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:task_manager/Constants/constants.dart';
 import 'package:task_manager/screens/calendar/calendar.dart';
 import 'package:task_manager/screens/home/home.dart';
-import 'package:task_manager/screens/notification/notification.dart';
-import 'package:task_manager/screens/search/search.dart';
+import 'package:task_manager/screens/profile/profile.dart';
+
+import 'focus/focus.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -19,8 +20,8 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin{
   List<Widget> body = const [
     HomeScreen(),
     CalendarScreen(),
-    NotificationScreen(),
-    SearchScreen()
+    FocusScreen(),
+    ProfileScreen()
   ];
 
   @override
@@ -52,8 +53,8 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin{
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
         backgroundColor: ColorConstants.BACKGROUND_COLOR,
-        selectedItemColor: ColorConstants.CARD_COLOR,
-        unselectedItemColor: ColorConstants.ICON_BG_COLOR,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey.shade500,
         iconSize: 30,
         type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
@@ -63,10 +64,10 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin{
           });
         },
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.calendar_month),label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications_none),label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.search_rounded),label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.calendar_month),label: "Calendar"),
+          BottomNavigationBarItem(icon: Icon(Icons.access_time),label: "Focus"),
+          BottomNavigationBarItem(icon: Icon(Icons.person),label: "Profile"),
         ],
 
       ),
