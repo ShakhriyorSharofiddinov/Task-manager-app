@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/core/constants/colors.dart';
+import 'package:task_manager/core/theme.dart';
+import 'package:task_manager/screens/intro/splash/splash_screen.dart';
 import 'package:task_manager/screens/main_screen.dart';
 
-void main () {
-  runApp( const MyApp() );
+void main() {
+  runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -11,8 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "ToDo",
-      theme: ThemeData(primarySwatch: Colors.blue),
+      title: "UpToDo",
+      theme: myTheme(),
       home: const MainScreen(),
     );
   }
